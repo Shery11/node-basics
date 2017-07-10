@@ -1,0 +1,17 @@
+{
+  "name": "password-manager",
+  "version": "1.0.0",
+  "description": "this is a password manager app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Shaharyar",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "node-persist": "^2.1.0",
+    "yargs": "^8.0.2"
+  }
+}
