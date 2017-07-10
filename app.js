@@ -74,13 +74,8 @@ function getAccounts(masterPassword){
 	    accounts = JSON.parse(bytes.toString(crypto.enc.Utf8));
 
    	}
-
-
-    return accounts; 
-
-
-
-
+     
+     return accounts; 
 
 }
 
