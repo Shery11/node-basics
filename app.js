@@ -117,29 +117,34 @@ function getAccount(accountName,masterPassword){
 var command = argv._[0];
 
 if(command === 'create'){
+	try{
+		var account = {
 
-	var account = {
+			name:argv.n,
+			userName:argv.u,
+			password:argv.p
+			
+		}
 
-		name:argv.n,
-		userName:argv.u,
-		password:argv.p
-		
+		var newAccount =  createAccount(account,argv.masterPassword);
+	}catch(e){
+		console.log('Unable to create acccount dute to error:'+e.message);
 	}
-
-	var newAccount =  createAccount(account,argv.masterPassword);
-
    
 
 }else if(command === 'get'){
 
-	var account = getAccount(argv.name,argv.masterPassword);
-
-     if(typeof account != 'undefined'){
-     	console.log(account);
-     }else{
-     	console.log('Account not found');
-     }
-
+		try{
+		    var account = getAccount(argv.name,argv.masterPassword);
+		
+				 if(typeof account != 'undefined'){
+				 	console.log(account);
+				 }else{
+				 	console.log('Account not found');
+				 }
+		}catch(e){
+			console.log('Unable to get account duo to error:'+e.message);
+		}
 
 }
 
